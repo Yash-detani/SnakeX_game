@@ -1,0 +1,50 @@
+* { box-sizing: border-box; }
+:root { color-scheme: dark; }
+body {
+  margin: 0; min-height: 100vh; padding: 24px;
+  background: #101410; color: #b8f7b0;
+  font-family: "Courier New", Courier, monospace;
+  display: flex; justify-content: center; align-items: flex-start;
+}
+.terminal {
+  width: min(100%, 1050px); background: #080b08;
+  border: 1px solid #365d34; border-radius: 10px;
+  box-shadow: 0 18px 60px #0009; overflow: hidden;
+}
+.terminal-header {
+  display: flex; align-items: center; gap: 8px; padding: 12px 16px;
+  background: #1a2119; border-bottom: 1px solid #365d34; color: #c8d5c5;
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.red { background: #ff6058; } .yellow { background: #ffbd2e; } .green { background: #28c840; }
+.terminal-title { margin-left: 8px; font-size: 13px; }
+.panel { padding: 24px; }
+.hidden { display: none !important; }
+.banner { color: #d8ffd2; font-weight: bold; white-space: pre; overflow-x: auto; }
+form { display: grid; gap: 10px; max-width: 420px; }
+label { margin-top: 8px; }
+input, select, button {
+  font: inherit; border: 1px solid #477844; border-radius: 4px;
+  padding: 10px 12px; background: #101810; color: #d8ffd2;
+}
+input:focus, select:focus, button:focus-visible { outline: 2px solid #8bdf7c; outline-offset: 2px; }
+button { cursor: pointer; margin-top: 12px; background: #245b22; font-weight: bold; }
+button:hover { background: #347d30; }
+button.secondary { background: #222a21; }
+.error { color: #ff8179; min-height: 1em; }
+.hint, footer { color: #86ad80; font-size: 13px; line-height: 1.5; }
+.status { margin-bottom: 14px; color: #d8ffd2; }
+.board {
+  width: fit-content; max-width: 100%; margin: 0; padding: 0;
+  font: 16px/1.15 "Courier New", Courier, monospace;
+  color: #c7f7bf; white-space: pre; overflow: auto;
+  user-select: none;
+}
+.actions { display: flex; gap: 12px; flex-wrap: wrap; }
+footer { padding: 12px 24px; border-top: 1px solid #243624; }
+@media (max-width: 600px) {
+  body { padding: 8px; }
+  .panel { padding: 14px; }
+  .board { font-size: 12px; }
+  .banner { font-size: 12px; }
+}

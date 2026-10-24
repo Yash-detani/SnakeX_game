@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SnakeX — JavaScript Edition</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="terminal">
+    <header class="terminal-header">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="terminal-title">SnakeX — Terminal Edition</span>
+    </header>
+
+    <section id="menu" class="panel">
+      <pre class="banner">========================================
+           WELCOME TO SNAKEX
+========================================</pre>
+      <form id="setup-form">
+        <label for="player-name">Enter Player Name (letters only):</label>
+        <input id="player-name" name="player-name" type="text" autocomplete="off" required pattern="[A-Za-z]+" title="Use letters only." />
+        <small id="name-error" class="error" aria-live="polite"></small>
+
+        <label for="grid-width">Grid Width (10 to 80):</label>
+        <input id="grid-width" type="number" min="10" max="80" value="20" required />
+
+        <label for="grid-height">Grid Height (10 to 36):</label>
+        <input id="grid-height" type="number" min="10" max="36" value="20" required />
+
+        <label for="difficulty">Select Difficulty Level:</label>
+        <select id="difficulty">
+          <option value="150">1. Easy</option>
+          <option value="100" selected>2. Medium</option>
+          <option value="50">3. Hard</option>
+        </select>
+        <button type="submit">Start Game</button>
+      </form>
+      <p class="hint">Controls: W (Up) · A (Left) · S (Down) · D (Right) · X (Quit)</p>
+    </section>
+
+    <section id="game-screen" class="panel hidden">
+      <div id="status" class="status"></div>
+      <pre id="board" class="board" aria-label="Snake game board"></pre>
+      <p id="instruction" class="hint">Press W, A, S, or D to start moving!</p>
+      <p class="hint">Controls: W (Up) | A (Left) | S (Down) | D (Right) | X (Quit)</p>
+    </section>
+
+    <section id="game-over" class="panel hidden">
+      <pre class="banner">========================================
+               GAME OVER
+========================================</pre>
+      <p id="final-player"></p>
+      <p id="final-score"></p>
+      <div class="actions">
+        <button id="restart-button">Play Again (R)</button>
+        <button id="quit-button" class="secondary">Quit (Q)</button>
+      </div>
+    </section>
+    <footer>SnakeX · JavaScript game</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
